@@ -1,6 +1,6 @@
 {
   "name": "pebblemouse-service",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -15,7 +15,7 @@
     "moment": "^2.15.0",
     "morgan": "~1.6.1",
     "node-validator": "^0.1.23",
-    "robot-js": "^1.0.2",
+    "robotjs": "^0.4.4",
     "serve-favicon": "~2.3.0",
     "stack-trace": "0.0.9"
   }
