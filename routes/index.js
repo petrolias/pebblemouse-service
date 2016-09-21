@@ -33,10 +33,10 @@ router.get('/robot/:_x/:_y', function(req, res, next) {
             function(callback) {
                 return callback(null, _x, _y);
             }
-            ,
-            function(callback, _x, _y) {
-                return callback(null,_x, _y);
-            }
+            // ,
+            // function(callback, _x, _y) {
+            //     return callback(null,_x, _y);
+            // }
         ],
         function(err, results) {
             if (err) return m_helper.LogError(res, err, 400, arguments, req);
@@ -47,7 +47,9 @@ router.get('/robot/:_x/:_y', function(req, res, next) {
 
             var mouse = robot.getMousePos();
             var screenSize = robot.getScreenSize();
-            robot.moveMouse(mouse.x + o.x, mouse.y + o.y);
+            robot.setMouseDelay(0);
+            robot.moveMouseSmooth(mouse.x + o.x, mouse.y + o.y);
+             //robot.moveMouse(mouse.x + o.x, mouse.y + o.y);
 
             return m_helper.ReturnSuccess(res, resA, null);
         });
